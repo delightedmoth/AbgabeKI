@@ -17,7 +17,7 @@ public class MovementControlller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        move = new Vector2(-1, Input.GetAxisRaw("Vertical"));
 
         transform.Translate(move * speed * Time.deltaTime);
     }

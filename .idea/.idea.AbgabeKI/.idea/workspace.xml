@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4fa39d9-2a49-402b-bf51-bc9ceff1b83b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AbgabeKI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AbgabeKI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovementControlller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovementControlller.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +69,8 @@
       <updated>1702740323718</updated>
       <workItem from="1702740329376" duration="20000" />
       <workItem from="1702740508108" duration="25000" />
+      <workItem from="1702742173953" duration="37000" />
+      <workItem from="1702742237327" duration="997000" />
     </task>
     <servers />
   </component>
