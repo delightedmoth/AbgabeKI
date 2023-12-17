@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public LayerMask groundLayer;
     private Vector2 vecGravity;
 
+    public bool jump;
     private bool isJumping;
     private float jumpCounter;
 
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     {
         vecGravity = new Vector2(0, -Physics2D.gravity.y);
         rb = GetComponent<Rigidbody2D>();
+        groundCheck = rb.transform;
     }
 
     private void OnEnable()
@@ -34,7 +36,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Jump") && isGrounded()) 
+
+        if (jump == true && isGrounded()) 
         {
             rb.velocity = new Vector2(0, jumpForce);
             isJumping = true;
@@ -57,7 +60,7 @@ public class Player : MonoBehaviour
             rb.velocity += vecGravity * currentJumpM * Time.deltaTime;
         }
 
-        if (Input.GetButtonUp("Jump"))
+        if (jump == false)
         {
             isJumping = false;
             jumpCounter = 0;
@@ -78,7 +81,7 @@ public class Player : MonoBehaviour
     bool isGrounded()
     {
         return Physics2D.OverlapCapsule(groundCheck.position,
-            new Vector2(0.6f, 0.13f), CapsuleDirection2D.Horizontal, 0, groundLayer);
+            new Vector2(0.5f, 1.05f), CapsuleDirection2D.Vertical, 0, groundLayer);
     }
     
 
@@ -86,11 +89,8 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            GameManager.Instance.gameOver();
-        }
-        else
-        {
-            Debug.Log("not triggered " + other.name);
+            //GameManager.Instance.gameOver();
+            
         }
     }
 }

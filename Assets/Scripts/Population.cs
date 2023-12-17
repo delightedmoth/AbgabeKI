@@ -12,6 +12,8 @@ public class Population : MonoBehaviour
    public float trialTime = 10f;
    public float timeScale = 2f;
    private int generation = 1;
+   
+   
 
 
    void Start()
@@ -19,6 +21,13 @@ public class Population : MonoBehaviour
       for (int i = 0; i < populationSize; i++)
       {
          GameObject bot = Instantiate(sprite, startingPos.transform.position, this.transform.rotation);
+
+         Player player = bot.GetComponent<Player>();
+         player.gravity = Random.Range(1f, 10f);
+         player.jumpForce = Random.Range(5f, 15f);
+         player.jumpMultiplier = Random.Range(5f, 15f);
+         player.jumpTime = Random.Range(0.05f, 0.4f);
+         player.jump = Random.value > 0.5f;
          
          population.Add(bot);
       }

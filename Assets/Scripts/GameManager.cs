@@ -14,8 +14,7 @@ public class GameManager : MonoBehaviour
 
    private Player player;
    private Spawner spawner;
-
-   private float score;
+   
    
    private void Awake()
    {
@@ -64,15 +63,13 @@ public class GameManager : MonoBehaviour
    private void Update()
    {
       gameSpeed += gameSpeedIncrease * Time.deltaTime;
-      score += gameSpeed * Time.deltaTime;
    }
 
    public void gameOver()
    {
-      gameSpeed = 0f;
-      enabled = false;
+      
       
       //player.gameObject.SetActive(false);
-      spawner.gameObject.SetActive(false);
+      //spawner.gameObject.SetActive(false);
    }
 }
