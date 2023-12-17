@@ -82,10 +82,13 @@ public class Population : MonoBehaviour
 
    private void Update()
    {
-      if (Time.realtimeSinceStartup > startTime + trialTime)
-      {
+      elapsed += Time.deltaTime;
+      if (elapsed >= trialTime){
          BREED();
          //GameManager.Instance.gameSpeed = GameManager.Instance.initialGameSpeed;
+         elapsed = 0f;
       }
+
+      
    }
 }
