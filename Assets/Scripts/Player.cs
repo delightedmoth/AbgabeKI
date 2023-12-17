@@ -80,12 +80,17 @@ public class Player : MonoBehaviour
         return Physics2D.OverlapCapsule(groundCheck.position,
             new Vector2(0.5f, 1f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
+    
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Obstacle"))
         {
             GameManager.Instance.gameOver();
+        }
+        else
+        {
+            Debug.Log("not triggered " + other.name);
         }
     }
 }
