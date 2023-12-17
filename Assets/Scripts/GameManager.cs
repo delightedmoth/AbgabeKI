@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
    private Player player;
    private Spawner spawner;
+
+   private float score;
    
    private void Awake()
    {
@@ -37,7 +39,7 @@ public class GameManager : MonoBehaviour
 
    private void Start()
    {
-      player = FindObjectOfType<Player>();
+      //player = FindObjectOfType<Player>();
       spawner = FindObjectOfType<Spawner>();
       
       NewGame();
@@ -55,13 +57,14 @@ public class GameManager : MonoBehaviour
       gameSpeed = initialGameSpeed;
       enabled = true;
       
-      player.gameObject.SetActive(true);
+      //player.gameObject.SetActive(true);
       spawner.gameObject.SetActive(true);
    }
 
    private void Update()
    {
       gameSpeed += gameSpeedIncrease * Time.deltaTime;
+      score += gameSpeed * Time.deltaTime;
    }
 
    public void gameOver()
@@ -69,7 +72,7 @@ public class GameManager : MonoBehaviour
       gameSpeed = 0f;
       enabled = false;
       
-      player.gameObject.SetActive(false);
+      //player.gameObject.SetActive(false);
       spawner.gameObject.SetActive(false);
    }
 }
