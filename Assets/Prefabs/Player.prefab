@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8920885721649167418}
   - component: {fileID: 1932840002278514631}
   - component: {fileID: 6843188155225187798}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -104,10 +104,13 @@ MonoBehaviour:
   gravity: 3
   jumpForce: 6
   jumpMultiplier: 2
+  distanceforJump: 2
   groundCheck: {fileID: 4580817668401607255}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  jump: 0
+  fitness: 0
 --- !u!50 &1932840002278514631
 Rigidbody2D:
   serializedVersion: 4
@@ -189,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4580817668401607255}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

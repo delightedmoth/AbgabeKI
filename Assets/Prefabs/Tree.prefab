@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 675264033304639770}
   - component: {fileID: 6094118509168773554}
   - component: {fileID: 8467036412243091483}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0

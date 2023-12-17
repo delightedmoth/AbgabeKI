@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Population : MonoBehaviour
@@ -12,8 +13,8 @@ public class Population : MonoBehaviour
    public float trialTime = 10f;
    public float timeScale = 2f;
    private int generation = 1;
-   
-   
+
+   public TMPro.TextMeshProUGUI textMesh;
 
 
    void Start()
@@ -27,9 +28,10 @@ public class Population : MonoBehaviour
          player.jumpForce = Random.Range(5.0f, 15.0f);
          player.jumpMultiplier = Random.Range(5.0f, 15.0f);
          player.jumpTime = Random.Range(0.05f, 0.4f);
-         player.jump = Random.Range(0,2) < 1;
+         player.distanceforJump = Random.Range(0.5f, 2.5f);
          
          population.Add(bot);
+         textMesh.text = "Gen: " + generation;
       }
 
       Time.timeScale = timeScale;

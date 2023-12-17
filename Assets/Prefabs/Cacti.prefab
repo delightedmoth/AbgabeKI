@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2947280620677323236}
   - component: {fileID: 5202063593484834820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tile_0127 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8489236093808122678}
   - component: {fileID: 2684181066991490836}
   - component: {fileID: -6264249805097076565}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cacti
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
