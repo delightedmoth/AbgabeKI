@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     public bool jump;
     private bool isJumping;
     private float jumpCounter;
+    public float fitness = 0f;
+    private bool dead = false;
 
     private void Awake()
     {
@@ -76,6 +78,11 @@ public class Player : MonoBehaviour
             rb.velocity -= vecGravity * gravity * Time.deltaTime;
         }
 
+        if (dead == false)
+        {
+            fitness += GameManager.Instance.gameSpeed * Time.deltaTime;
+        }
+
     }
 
     bool isGrounded()
@@ -89,8 +96,7 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            //GameManager.Instance.gameOver();
-            
+            dead = true;
         }
     }
 }

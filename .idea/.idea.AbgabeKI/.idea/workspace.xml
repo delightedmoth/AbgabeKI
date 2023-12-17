@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4fa39d9-2a49-402b-bf51-bc9ceff1b83b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/BotSprite.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/BotSprite.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AbgabeKI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AbgabeKI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Population.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Population.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +83,7 @@
       <workItem from="1702801110500" duration="1839000" />
       <workItem from="1702806169125" duration="3119000" />
       <workItem from="1702812599631" duration="9057000" />
-      <workItem from="1702829060826" duration="6284000" />
+      <workItem from="1702829060826" duration="7549000" />
     </task>
     <servers />
   </component>
