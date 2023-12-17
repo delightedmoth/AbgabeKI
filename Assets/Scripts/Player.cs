@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 
         if (hit.collider != null)
         {
-            Debug.Log(hit.collider.name);
+            distancetoObstacle1 = Mathf.Abs(hit.point.x - transform.position.x);
         }
        
         if (distanceforJump > distancetoObstacle1)
