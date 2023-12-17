@@ -2,17 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
    public static GameManager Instance { get; private set; }
 
-   public float initalGameSpeed = 5f;
+   [FormerlySerializedAs("initalGameSpeed")] public float initialGameSpeed = 5f;
    public float gameSpeedIncrease = 0.1f;
    public float gameSpeed { get; private set; }
+   
    private void Awake()
    {
-      if (Instance = null)
+      if (Instance == null)
       {
          Instance = this;
       }
@@ -24,7 +26,7 @@ public class GameManager : MonoBehaviour
 
    private void OnDestroy()
    {
-      if (Instance = this)
+      if (Instance == this)
       {
          Instance = null;
       }
@@ -37,11 +39,11 @@ public class GameManager : MonoBehaviour
 
    private void NewGame()
    {
-      gameSpeed = initalGameSpeed;
+      gameSpeed = initialGameSpeed;
    }
 
    private void Update()
    {
-      gameSpeed = gameSpeedIncrease * Time.deltaTime;
+      gameSpeed += gameSpeedIncrease * Time.deltaTime;
    }
 }
