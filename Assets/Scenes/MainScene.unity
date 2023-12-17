@@ -819,8 +819,9 @@ MonoBehaviour:
   sprite: {fileID: 6825173759135496323, guid: 22ca79a037b031345aab10be94c100b2, type: 3}
   startingPos: {fileID: 619541018}
   populationSize: 50
-  trialTime: 10
-  timeScale: 2
+  population: []
+  trialTime: 30
+  timeScale: 3
   textMesh: {fileID: 1508178631}
 --- !u!4 &1922245159
 Transform:
