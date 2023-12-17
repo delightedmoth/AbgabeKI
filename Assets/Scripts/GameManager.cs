@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
    [FormerlySerializedAs("initalGameSpeed")] public float initialGameSpeed = 5f;
    public float gameSpeedIncrease = 0.1f;
-   public float gameSpeed { get; private set; }
+   public float gameSpeed { get;  set; }
 
    private Player player;
    private Spawner spawner;

@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
       Debug.DrawRay(transform.position, Vector2.right * 9f, Color.red);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, 9f,
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, 15f,
             LayerMask.GetMask("Obstacle"));
 
         if (hit.collider != null)
