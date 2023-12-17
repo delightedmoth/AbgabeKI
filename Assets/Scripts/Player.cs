@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
     bool isGrounded()
     {
         return Physics2D.OverlapCapsule(groundCheck.position,
-            new Vector2(0.5f, 1f), CapsuleDirection2D.Horizontal, 0, groundLayer);
+            new Vector2(0.6f, 0.13f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
     
 
