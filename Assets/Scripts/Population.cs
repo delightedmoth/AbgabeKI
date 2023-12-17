@@ -85,7 +85,7 @@ public class Population : MonoBehaviour
       if (Time.realtimeSinceStartup > startTime + trialTime)
       {
          BREED();
-         GameManager.Instance.gameSpeed = GameManager.Instance.initialGameSpeed;
+         //GameManager.Instance.gameSpeed = GameManager.Instance.initialGameSpeed;
       }
    }
 }
