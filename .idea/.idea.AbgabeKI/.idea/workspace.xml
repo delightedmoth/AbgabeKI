@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d4fa39d9-2a49-402b-bf51-bc9ceff1b83b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AbgabeKI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AbgabeKI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneysAssets/Tiles/Palettes/Floor Palette.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneysAssets/Tiles/Palettes/Floor Palette.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +80,7 @@
       <workItem from="1702757795968" duration="1483000" />
       <workItem from="1702801110500" duration="1839000" />
       <workItem from="1702806169125" duration="3119000" />
-      <workItem from="1702812599631" duration="1517000" />
+      <workItem from="1702812599631" duration="2250000" />
     </task>
     <servers />
   </component>

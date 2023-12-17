@@ -500,7 +500,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb742e6c31c5cf444b2b991eefc3680a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacles: []
+  objects:
+  - prefab: {fileID: 3066295452143111531, guid: a7563002f87b97e43ad8eef34858f541, type: 3}
+    spawnChance: 0.4
+  - prefab: {fileID: 6121633012982835503, guid: 293acf5d39035a4448e3721c62ae1687, type: 3}
+    spawnChance: 0.3
+  - prefab: {fileID: 2165667334135389918, guid: c37f1c909fc691746a9353d6d5240d34, type: 3}
+    spawnChance: 0.2
+  minSpawnRate: 1
+  maxSpawnRate: 2
 --- !u!4 &1499570032
 Transform:
   m_ObjectHideFlags: 0
