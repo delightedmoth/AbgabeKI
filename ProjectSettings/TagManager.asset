@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - floor
+  - Floor
   - Obstacle
+  - Bot
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Floor
-  - 
+  - Bot
   - 
   - 
   - 
