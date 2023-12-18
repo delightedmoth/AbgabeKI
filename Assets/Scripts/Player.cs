@@ -117,6 +117,7 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             dead = true;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
     
