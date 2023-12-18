@@ -29,8 +29,8 @@ public class Population : MonoBehaviour
 
          Player player = bot.GetComponent<Player>();
          player.gravity = Random.Range(1.0f, 10.0f);
-         player.jumpForce = Random.Range(5.0f, 15.0f);
-         player.jumpMultiplier = Random.Range(5.0f, 15.0f);
+         player.jumpForce = Random.Range(1.0f, 10.0f);
+         player.jumpMultiplier = Random.Range(1.0f, 10.0f);
          player.jumpTime = Random.Range(0.05f, 0.4f);
          player.distanceforJump = Random.Range(0.5f, 10.5f);
          
@@ -87,6 +87,11 @@ public class Population : MonoBehaviour
          BREED();
          //GameManager.Instance.gameSpeed = GameManager.Instance.initialGameSpeed;
          elapsed = 0f;
+         GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+         foreach (GameObject obstacle in obstacles)
+         {
+            Destroy(obstacle);
+         }
       }
 
       

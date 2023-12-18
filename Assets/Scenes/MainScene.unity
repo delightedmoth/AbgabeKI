@@ -821,7 +821,7 @@ MonoBehaviour:
   populationSize: 50
   population: []
   trialTime: 30
-  timeScale: 3
+  timeScale: 10
   textMesh: {fileID: 1508178631}
 --- !u!4 &1922245159
 Transform:
