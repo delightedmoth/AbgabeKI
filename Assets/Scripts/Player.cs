@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     private bool isJumping;
     private float jumpCounter;
     public float fitness = 0f;
-    private bool dead = false;
+    public bool dead = false;
     private float distancetoObstacle1 = 10f;
     private float distancetoObstacle2 = 10f;
    

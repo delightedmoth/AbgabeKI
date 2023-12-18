@@ -82,6 +82,7 @@ public class Population : MonoBehaviour
 
    private void Update()
    {
+      
       elapsed += Time.deltaTime;
       if (elapsed >= trialTime){
          BREED();
@@ -91,6 +92,27 @@ public class Population : MonoBehaviour
          foreach (GameObject obstacle in obstacles)
          {
             Destroy(obstacle);
+         }
+      }
+      
+      int j = 0;
+      for (int i = 0; i < populationSize; i++)
+      {
+         
+         if (population[i].GetComponent<Player>().dead == true)
+         {
+            j++;
+         }
+
+         if (j == populationSize)
+         {
+            BREED();
+            elapsed = 0f;
+            GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+            foreach (GameObject obstacle in obstacles)
+            {
+               Destroy(obstacle);
+            }
          }
       }
 

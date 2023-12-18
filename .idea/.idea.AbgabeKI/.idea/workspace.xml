@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4fa39d9-2a49-402b-bf51-bc9ceff1b83b" name="Changes" comment="" />
+    <list default="true" id="d4fa39d9-2a49-402b-bf51-bc9ceff1b83b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AbgabeKI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AbgabeKI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Population.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Population.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,6 +99,7 @@
       <workItem from="1702853675067" duration="61000" />
       <workItem from="1702855351858" duration="1028000" />
       <workItem from="1702889020040" duration="1487000" />
+      <workItem from="1702892815953" duration="1437000" />
     </task>
     <servers />
   </component>
