@@ -19,10 +19,12 @@ public class Population : MonoBehaviour
    private int generation = 1;
 
    public TMPro.TextMeshProUGUI textMesh;
+   public TMPro.TextMeshProUGUI textMaxFitness;
 
 
    void Start()
    {
+      textMaxFitness.text = "Max Fitness: ";
       for (int i = 0; i < populationSize; i++)
       {
          GameObject bot = Instantiate(sprite, startingPos.transform.position, this.transform.rotation);
@@ -73,6 +75,8 @@ public class Population : MonoBehaviour
       startTime = Time.realtimeSinceStartup;
       List<GameObject> sortedPopulation = population.OrderByDescending(o => o.GetComponent<Player>().fitness).ToList();
 
+      textMaxFitness.text = "Max Fitness: " + sortedPopulation[0].GetComponent<Player>().fitness;
+      
       int halfPopulation = (int)(sortedPopulation.Count / 2.0f);
       population.Clear();
       for (int i = 0; i < halfPopulation; i++)
