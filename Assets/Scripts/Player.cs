@@ -39,14 +39,15 @@ public class Player : MonoBehaviour
     private void Update()
     {
       Debug.DrawRay(transform.position, Vector2.right * 9f, Color.red);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, 15f,
-            LayerMask.GetMask("Obstacle"));
+       // RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, 15f,
+          //  LayerMask.GetMask("Obstacle"));
 
-        if (transform.position.y < -2)
-        {
-            results = Physics2D.RaycastAll(transform.position, Vector2.right, 20f, LayerMask.GetMask("Obstacle"));
+          if (transform.position.y < -2)
+          {
+              results = Physics2D.RaycastAll(transform.position, Vector2.right, 30f, LayerMask.GetMask("Obstacle"));
+          }
 
-            if (results[0].collider != null)
+          if (results[0].collider != null)
             {
                 distancetoObstacle1 = Mathf.Abs(results[0].point.x - transform.position.x);
             }
@@ -55,7 +56,7 @@ public class Player : MonoBehaviour
             {
                 distancetoObstacle2 = Mathf.Abs(results[1].point.x - transform.position.x);
             }
-        }
+        
 
         if (distanceforJump1 > distancetoObstacle1 && distanceforJump2 > distancetoObstacle2)
         {

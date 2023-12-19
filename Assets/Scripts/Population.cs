@@ -15,27 +15,28 @@ public class Population : MonoBehaviour
    public static float elapsed = 0f;
    public float trialTime = 10f;
    public float timeScale = 2f;
-   private float startTime = 0f;
    private int generation = 1;
+   private float avgFitness = 0.0f;
 
    public TMPro.TextMeshProUGUI textMesh;
    public TMPro.TextMeshProUGUI textMaxFitness;
-
+   public TMPro.TextMeshProUGUI textAvgFitness;
 
    void Start()
    {
       textMaxFitness.text = "Max Fitness: ";
+      textAvgFitness.text = "Avg Fitness: ";
       for (int i = 0; i < populationSize; i++)
       {
          GameObject bot = Instantiate(sprite, startingPos.transform.position, this.transform.rotation);
 
          Player player = bot.GetComponent<Player>();
          player.gravity = Random.Range(1.0f, 10.0f);
-         player.jumpForce = Random.Range(1.0f, 10.0f);
-         player.jumpMultiplier = Random.Range(1.0f, 10.0f);
+         player.jumpForce = Random.Range(1.0f, 8.0f);
+         player.jumpMultiplier = Random.Range(0f, 5.0f);
          player.jumpTime = Random.Range(0.05f, 0.4f);
          player.distanceforJump1 = Random.Range(0.5f, 10.5f);
-         player.distanceforJump2 = Random.Range(2.0f, 15.5f);
+         player.distanceforJump2 = Random.Range(1.0f, 19.5f);
          
          population.Add(bot);
          
@@ -53,11 +54,11 @@ public class Population : MonoBehaviour
       if (Random.Range(0, 100) == 1)
       {
          player.gravity = Random.Range(1.0f, 10.0f);
-         player.jumpForce = Random.Range(1.0f, 10.0f);
-         player.jumpMultiplier = Random.Range(1.0f, 10.0f);
+         player.jumpForce = Random.Range(1.0f, 8.0f);
+         player.jumpMultiplier = Random.Range(1.0f, 5.0f);
          player.jumpTime = Random.Range(0.05f, 0.4f);
          player.distanceforJump1 = Random.Range(0.5f, 10.5f);
-         player.distanceforJump2 = Random.Range(3.0f, 15.5f);
+         player.distanceforJump2 = Random.Range(1.0f, 19.5f);
       }
       else{ 
          player.gravity = parent1.gravity;
@@ -70,12 +71,17 @@ public class Population : MonoBehaviour
       return bot;
    }
 
-   void BREED()
+   void Breed()
    {
-      startTime = Time.realtimeSinceStartup;
       List<GameObject> sortedPopulation = population.OrderByDescending(o => o.GetComponent<Player>().fitness).ToList();
 
       textMaxFitness.text = "Max Fitness: " + sortedPopulation[0].GetComponent<Player>().fitness;
+      for (int i = 0; i < sortedPopulation.Count; i++)
+      {
+         avgFitness += sortedPopulation[i].GetComponent<Player>().fitness;
+      }
+      textAvgFitness.text = "Avg Fitness: " + avgFitness/sortedPopulation.Count;
+      Debug.Log("Gen: " + generation + ", Avg Fitness: " + avgFitness/sortedPopulation.Count);
       
       int halfPopulation = (int)(sortedPopulation.Count / 2.0f);
       population.Clear();
@@ -94,6 +100,7 @@ public class Population : MonoBehaviour
 
       generation++;
       textMesh.text = "Gen: " + generation;
+      avgFitness = 0;
    }
 
    private void Update()
@@ -101,7 +108,7 @@ public class Population : MonoBehaviour
       
       elapsed += Time.deltaTime;
       if (elapsed >= trialTime){
-         BREED();
+         Breed();
          //GameManager.Instance.gameSpeed = GameManager.Instance.initialGameSpeed;
          elapsed = 0f;
          GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
@@ -122,7 +129,7 @@ public class Population : MonoBehaviour
 
          if (j == populationSize)
          {
-            BREED();
+            Breed();
             elapsed = 0f;
             GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
             foreach (GameObject obstacle in obstacles)
