@@ -11,11 +11,13 @@ public class Player : MonoBehaviour
     public float gravity = 9.81f * 2f;
     public float jumpForce = 8f;
     public float jumpMultiplier = 4f;
-    public float distanceforJump = 2f;
+    public float distanceforJump1 = 2f;
+    public float distanceforJump2 = 6f;
 
     public Transform groundCheck;
     public LayerMask groundLayer;
     private Vector2 vecGravity;
+    RaycastHit2D[] results = new RaycastHit2D[2];
 
     public bool jump;
     private bool isJumping;
@@ -23,7 +25,7 @@ public class Player : MonoBehaviour
     public float fitness = 0f;
     public bool dead = false;
     private float distancetoObstacle1 = 10f;
-    private float distancetoObstacle2 = 10f;
+    private float distancetoObstacle2 = 20f;
    
 
     private void Awake()
@@ -40,12 +42,22 @@ public class Player : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, 15f,
             LayerMask.GetMask("Obstacle"));
 
-        if (hit.collider != null)
+        if (transform.position.y < -2)
         {
-            distancetoObstacle1 = Mathf.Abs(hit.point.x - transform.position.x);
+            results = Physics2D.RaycastAll(transform.position, Vector2.right, 20f, LayerMask.GetMask("Obstacle"));
+
+            if (results[0].collider != null)
+            {
+                distancetoObstacle1 = Mathf.Abs(results[0].point.x - transform.position.x);
+            }
+
+            if (results[1].collider != null)
+            {
+                distancetoObstacle2 = Mathf.Abs(results[1].point.x - transform.position.x);
+            }
         }
-       
-        if (distanceforJump > distancetoObstacle1)
+
+        if (distanceforJump1 > distancetoObstacle1 && distanceforJump2 > distancetoObstacle2)
         {
             jump = true;
         }
@@ -60,7 +72,6 @@ public class Player : MonoBehaviour
         {
             fitness += GameManager.Instance.gameSpeed * Time.deltaTime;
         }
-
     }
 
     bool isGrounded()

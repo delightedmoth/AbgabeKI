@@ -32,7 +32,8 @@ public class Population : MonoBehaviour
          player.jumpForce = Random.Range(1.0f, 10.0f);
          player.jumpMultiplier = Random.Range(1.0f, 10.0f);
          player.jumpTime = Random.Range(0.05f, 0.4f);
-         player.distanceforJump = Random.Range(0.5f, 10.5f);
+         player.distanceforJump1 = Random.Range(0.5f, 10.5f);
+         player.distanceforJump2 = Random.Range(2.0f, 15.5f);
          
          population.Add(bot);
          
@@ -46,13 +47,24 @@ public class Population : MonoBehaviour
    {
       GameObject bot = Instantiate(sprite, startingPos.transform.position, this.transform.rotation);
       Player player = bot.GetComponent<Player>();
-      
-      player.gravity = parent1.gravity;
-      player.jumpForce = parent2.jumpForce;
-      player.jumpMultiplier = parent1.jumpMultiplier;
-      player.jumpTime = parent2.jumpTime;
-      player.distanceforJump = parent1.distanceforJump;
 
+      if (Random.Range(0, 100) == 1)
+      {
+         player.gravity = Random.Range(1.0f, 10.0f);
+         player.jumpForce = Random.Range(1.0f, 10.0f);
+         player.jumpMultiplier = Random.Range(1.0f, 10.0f);
+         player.jumpTime = Random.Range(0.05f, 0.4f);
+         player.distanceforJump1 = Random.Range(0.5f, 10.5f);
+         player.distanceforJump2 = Random.Range(3.0f, 15.5f);
+      }
+      else{ 
+         player.gravity = parent1.gravity;
+         player.jumpForce = parent2.jumpForce;
+         player.jumpMultiplier = parent1.jumpMultiplier;
+         player.jumpTime = parent2.jumpTime;
+         player.distanceforJump1 = parent1.distanceforJump1;
+         player.distanceforJump2 = parent2.distanceforJump2;
+      }
       return bot;
    }
 
