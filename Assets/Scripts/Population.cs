@@ -10,13 +10,13 @@ public class Population : MonoBehaviour
 {
    public GameObject sprite;
    public GameObject startingPos;
-   public int populationSize;
    public List<GameObject> population;
+   public int populationSize;
    public static float elapsed = 0f;
    public float trialTime = 10f;
    public float timeScale = 2f;
    private int generation = 1;
-   private float avgFitness = 0.0f;
+   private float avgFitness = 0f;
 
    public TMPro.TextMeshProUGUI textMesh;
    public TMPro.TextMeshProUGUI textMaxFitness;
@@ -74,14 +74,8 @@ public class Population : MonoBehaviour
    void Breed()
    {
       List<GameObject> sortedPopulation = population.OrderByDescending(o => o.GetComponent<Player>().fitness).ToList();
-
-      textMaxFitness.text = "Max Fitness: " + sortedPopulation[0].GetComponent<Player>().fitness;
-      for (int i = 0; i < sortedPopulation.Count; i++)
-      {
-         avgFitness += sortedPopulation[i].GetComponent<Player>().fitness;
-      }
-      textAvgFitness.text = "Avg Fitness: " + avgFitness/sortedPopulation.Count;
-      Debug.Log("Gen: " + generation + ", Avg Fitness: " + avgFitness/sortedPopulation.Count);
+      
+      displayText(sortedPopulation);
       
       int halfPopulation = (int)(sortedPopulation.Count / 2.0f);
       population.Clear();
@@ -103,6 +97,17 @@ public class Population : MonoBehaviour
       avgFitness = 0;
    }
 
+   void displayText(List<GameObject> list)
+   {
+      textMaxFitness.text = "Max Fitness: " + list[0].GetComponent<Player>().fitness;
+      for (int i = 0; i < list.Count; i++)
+      {
+         avgFitness += list[i].GetComponent<Player>().fitness;
+      }
+      textAvgFitness.text = "Avg Fitness: " + avgFitness/list.Count;
+      Debug.Log("Gen: " + generation + ", Avg Fitness: " + avgFitness/list.Count);
+   }
+   
    private void Update()
    {
       

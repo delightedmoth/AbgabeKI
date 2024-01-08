@@ -19,11 +19,12 @@ public class Player : MonoBehaviour
     private Vector2 vecGravity;
     RaycastHit2D[] results = new RaycastHit2D[2];
 
+    public bool dead = false;
     public bool jump;
     private bool isJumping;
-    private float jumpCounter;
+    
     public float fitness = 0f;
-    public bool dead = false;
+    private float jumpCounter;
     private float distancetoObstacle1 = 10f;
     private float distancetoObstacle2 = 20f;
    
@@ -42,20 +43,20 @@ public class Player : MonoBehaviour
        // RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, 15f,
           //  LayerMask.GetMask("Obstacle"));
 
-          if (transform.position.y < -2)
-          {
-              results = Physics2D.RaycastAll(transform.position, Vector2.right, 30f, LayerMask.GetMask("Obstacle"));
-          }
+        if (transform.position.y < -2) 
+        { 
+            results = Physics2D.RaycastAll(transform.position, Vector2.right, 30f, LayerMask.GetMask("Obstacle"));
+        }
 
-          if (results[0].collider != null)
-            {
-                distancetoObstacle1 = Mathf.Abs(results[0].point.x - transform.position.x);
-            }
+        if (results[0].collider != null)
+        { 
+            distancetoObstacle1 = Mathf.Abs(results[0].point.x - transform.position.x);
+        }
 
-            if (results[1].collider != null)
-            {
-                distancetoObstacle2 = Mathf.Abs(results[1].point.x - transform.position.x);
-            }
+        if (results[1].collider != null) 
+        { 
+            distancetoObstacle2 = Mathf.Abs(results[1].point.x - transform.position.x);
+        }
         
 
         if (distanceforJump1 > distancetoObstacle1 && distanceforJump2 > distancetoObstacle2)
